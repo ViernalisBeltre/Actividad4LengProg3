@@ -99,15 +99,24 @@ namespace Actividad4LengProg3.Controllers
 
         private List<string> GetCarreras() => new List<string>
         {
-            "Ingeniería en Sistemas", "Administración de Empresas", "Contabilidad", "Diseño Gráfico", "Derecho"
+            "Ingeniería Eléctrica",
+            "Ingeniería de Software",
+            "Contabilidad",
+            "Enfermería",
+            "Derecho"
         };
 
         private List<string> GetRecintos() => new List<string>
         {
-            "Santo Domingo", "Santiago", "La Vega", "San Pedro", "Puerto Plata"
+            "Santo Domingo Oeste",
+            "Metropolitano",
+            "Baní",
+            "La Romana",
+            "Moca",
+            "Las Américas"
         };
 
-        private List<string> GetGeneros() => new List<string> { "Masculino", "Femenino", "Otro" };
+        private List<string> GetGeneros() => new List<string> { "Masculino", "Femenino"};
 
         private List<string> GetTurnos() => new List<string> { "Matutino", "Vespertino", "Nocturno" };
     }
