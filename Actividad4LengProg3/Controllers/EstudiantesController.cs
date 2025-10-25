@@ -97,24 +97,19 @@ namespace Actividad4LengProg3.Controllers
             return RedirectToAction("Lista");
         }
 
-        private List<string> GetCarreras() => new List<string>
+        private List<string> GetCarreras()
         {
-            "Ingeniería Eléctrica",
-            "Ingeniería de Software",
-            "Contabilidad",
-            "Enfermería",
-            "Derecho"
-        };
+            return CarrerasController.listaCarreras
+                .Select(c => c.NombreCarrera)
+                .ToList();
+        }
 
-        private List<string> GetRecintos() => new List<string>
+        private List<string> GetRecintos()
         {
-            "Santo Domingo Oeste",
-            "Metropolitano",
-            "Baní",
-            "La Romana",
-            "Moca",
-            "Las Américas"
-        };
+            return RecintosController.listaRecintos
+                .Select(r => r.NombreRecinto)
+                .ToList();
+        }
 
         private List<string> GetGeneros() => new List<string> { "Masculino", "Femenino"};
 
