@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Actividad4LengProg3.Models.RecintoViewModel>
+
+<h2>Lista de Recintos</h2>
+
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success">@TempData["Mensaje"]</div>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Codigo</td>
+                <td>@r.NombreRecinto</td>
+                <td>@r.DireccionRecinto</td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { codigo = r.Codigo }, new { @class = "btn btn-warning btn-sm" })
+                    @Html.ActionLink("Eliminar", "Eliminar", new { codigo = r.Codigo }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Crear")" class="btn btn-primary">Agregar nuevo recinto</a>
