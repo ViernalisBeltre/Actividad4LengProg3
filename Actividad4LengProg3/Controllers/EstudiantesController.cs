@@ -50,7 +50,7 @@ namespace Actividad4LengProg3.Controllers
         {
             var estudiante = listaEstudiantes.FirstOrDefault(e => e.Matricula == matricula);
             if (estudiante == null)
-                return HttpNotFound();
+                return NotFound();
 
             ViewBag.Carreras = GetCarreras();
             ViewBag.Recintos = GetRecintos();
