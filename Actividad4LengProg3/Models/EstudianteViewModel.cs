@@ -34,7 +34,7 @@ namespace Actividad4LengProg3.Models
         [Display(Name = "Teléfono")]
         public string Telefono { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Digite la dirección")]
         [StringLength(200)]
         [Display(Name = "Dirección")]
         public string Direccion { get; set; }
