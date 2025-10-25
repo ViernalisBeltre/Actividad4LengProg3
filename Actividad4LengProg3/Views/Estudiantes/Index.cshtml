@@ -84,7 +84,7 @@
             <span asp-validation-for="Turno" class="text-danger"></span>
         </div>
 
-        <div class="form-group w-25">
+        <div class="form-group w-25 my-4">
             <label>@Html.CheckBoxFor(m => m.EstaBecado) ¿Está becado?</label>
         </div>
     </div>
@@ -94,6 +94,8 @@
         @Html.TextBoxFor(m => m.PorcentajeBeca, new { @class = "form-control", type = "number", min = "0", max = "100" })
     </div>
 
-    <button type="submit" class="btn btn-primary">Registrar</button>
-    <a href="@Url.Action("Lista")" class="btn btn-success">Ver Lista</a>
+    <div class="my-4">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        <a href="@Url.Action("Lista")" class="btn btn-success">Ver Lista</a>
+    </div>
 }
