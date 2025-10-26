@@ -1,14 +1,25 @@
 ﻿@model IEnumerable<Actividad4LengProg3.Models.RecintoViewModel>
 
-<h2>Lista de Recintos</h2>
-
-@if (TempData["Mensaje"] != null)
-{
-    <div class="alert alert-success">@TempData["Mensaje"]</div>
+@{
+    ViewBag.Title = "Lista de Recintos";
 }
 
-<table class="table table-striped">
-    <thead>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Lista de Recintos</h2>
+    @if (TempData["Mensaje"] != null)
+    {
+        <div class="alert alert-success">@TempData["Mensaje"]</div>
+    }
+
+    <div class="text-end mb-3">
+        <a href="@Url.Action("Crear", "Recintos")" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Nuevo Recinto
+        </a>
+    </div>
+</div>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
         <tr>
             <th>Código</th>
             <th>Nombre</th>
@@ -31,5 +42,3 @@
         }
     </tbody>
 </table>
-
-<a href="@Url.Action("Crear")" class="btn btn-primary">Agregar nuevo recinto</a>

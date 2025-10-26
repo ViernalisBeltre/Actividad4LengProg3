@@ -4,22 +4,24 @@
 
 @using (Html.BeginForm("Editar", "Recintos", FormMethod.Post))
 {
-    <div class="form-group">
-        @Html.LabelFor(m => m.Codigo)
-        @Html.TextBoxFor(m => m.Codigo, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Codigo)
-    </div>
+    <div class="row my-4">
+        <div class="form-group col">
+            @Html.LabelFor(m => m.Codigo)
+            @Html.TextBoxFor(m => m.Codigo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Codigo)
+        </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.NombreRecinto)
-        @Html.TextBoxFor(m => m.NombreRecinto, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.NombreRecinto)
-    </div>
+        <div class="form-group col">
+            @Html.LabelFor(m => m.NombreRecinto)
+            @Html.TextBoxFor(m => m.NombreRecinto, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.NombreRecinto)
+        </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.DireccionRecinto)
-        @Html.TextBoxFor(m => m.DireccionRecinto, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.DireccionRecinto)
+        <div class="form-group col">
+            @Html.LabelFor(m => m.DireccionRecinto)
+            @Html.TextBoxFor(m => m.DireccionRecinto, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.DireccionRecinto)
+        </div>
     </div>
 
     <button type="submit" class="btn btn-success">Guardar</button>
