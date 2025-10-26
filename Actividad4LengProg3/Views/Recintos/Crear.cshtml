@@ -4,24 +4,28 @@
 
 @using (Html.BeginForm())
 {
-    <div class="form-group">
-        @Html.LabelFor(m => m.Codigo)
-        @Html.TextBoxFor(m => m.Codigo, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Codigo)
+    <div class="row my-4">
+        <div class="form-group col">
+            @Html.LabelFor(m => m.Codigo)
+            @Html.TextBoxFor(m => m.Codigo, new { @class = "form-control" })
+            <span asp-validation-for="Codigo" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            @Html.LabelFor(m => m.NombreRecinto)
+            @Html.TextBoxFor(m => m.NombreRecinto, new { @class = "form-control" })
+            <span asp-validation-for="NombreRecinto" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            @Html.LabelFor(m => m.DireccionRecinto)
+            @Html.TextBoxFor(m => m.DireccionRecinto, new { @class = "form-control" })
+            <span asp-validation-for="DireccionRecinto" class="text-danger"></span>
+        </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.NombreRecinto)
-        @Html.TextBoxFor(m => m.NombreRecinto, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.NombreRecinto)
+    <div class="my-3">
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="@Url.Action("Lista")" class="btn btn-secondary">Volver</a>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.DireccionRecinto)
-        @Html.TextBoxFor(m => m.DireccionRecinto, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.DireccionRecinto)
-    </div>
-
-    <button type="submit" class="btn btn-success">Guardar</button>
-    <a href="@Url.Action("Lista")" class="btn btn-secondary">Volver</a>
 }
