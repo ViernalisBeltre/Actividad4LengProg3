@@ -1,0 +1,46 @@
+﻿@model Actividad4LengProg3.Models.CarreraViewModel
+
+@{
+    ViewBag.Title = "Registrar Carrera";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Registrar Nueva Carrera</h2>
+
+    <form asp-action="Crear" method="post" class="col-md-8 offset-md-2">
+        <div class="form-group mb-3">
+            <label for="Codigo">Código</label>
+            <input asp-for="Codigo" class="form-control" />
+            <span asp-validation-for="Codigo" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="NombreCarrera">Nombre de la Carrera</label>
+            <input asp-for="NombreCarrera" class="form-control" />
+            <span asp-validation-for="NombreCarrera" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="CantidadCreditos">Cantidad de Créditos</label>
+            <input asp-for="CantidadCreditos" type="number" class="form-control" />
+            <span asp-validation-for="CantidadCreditos" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="CantidadMaterias">Cantidad de Materias</label>
+            <input asp-for="CantidadMaterias" type="number" class="form-control" />
+            <span asp-validation-for="CantidadMaterias" class="text-danger"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success px-4">Guardar</button>
+            <a href="@Url.Action("Index", "Carreras")" class="btn btn-secondary px-4">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
