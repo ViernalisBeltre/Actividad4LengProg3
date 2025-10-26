@@ -1,0 +1,45 @@
+﻿@model Actividad4LengProg3.Models.CarreraViewModel
+
+@{
+    ViewBag.Title = "Editar Carrera";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Editar Carrera</h2>
+
+    <form asp-action="Editar" method="post" class="col-md-8 offset-md-2">
+        <div class="form-group mb-3">
+            <label for="Codigo">Código</label>
+            <input asp-for="Codigo" class="form-control" readonly />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="NombreCarrera">Nombre de la Carrera</label>
+            <input asp-for="NombreCarrera" class="form-control" />
+            <span asp-validation-for="NombreCarrera" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="CantidadCreditos">Cantidad de Créditos</label>
+            <input asp-for="CantidadCreditos" type="number" class="form-control" />
+            <span asp-validation-for="CantidadCreditos" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="CantidadMaterias">Cantidad de Materias</label>
+            <input asp-for="CantidadMaterias" type="number" class="form-control" />
+            <span asp-validation-for="CantidadMaterias" class="text-danger"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary px-4">Actualizar</button>
+            <a href="@Url.Action("Index", "Carreras")" class="btn btn-secondary px-4">Volver</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
